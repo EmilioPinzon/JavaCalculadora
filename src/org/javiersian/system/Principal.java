@@ -2,8 +2,10 @@ package org.javiersian.system;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.javiersian.view.CalculadoraView;
 
 public class Principal extends Application{
     
@@ -14,14 +16,18 @@ public class Principal extends Application{
 
     @Override
     public void start(Stage escenarioPrincipal) throws Exception {
-       //nodos
-        VBox raiz = new VBox();
+        //vista de calculadora 
+        CalculadoraView calculadora = new CalculadoraView();
+   
         
-        //escena
-        Scene escena = new Scene(raiz);
+        //nodos
+        Pane raiz = new Pane(calculadora.getView());
+        
+        //escena(nodoRaiz, ancho, largo)
+        Scene escena = new Scene(raiz, 266,390);
         
         //cargar escena y mostrar escenario principal
-        escenarioPrincipal.setTitle("Caliculadora de Alvaro");
+        escenarioPrincipal.setTitle("Calculadora de Javier");
         escenarioPrincipal.setScene(escena);
         escenarioPrincipal.show();
  
