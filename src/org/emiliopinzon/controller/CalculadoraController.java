@@ -36,7 +36,7 @@ public class CalculadoraController {
             }
             actualizarPantalla(pantalla);
         } 
-        else if (input.matches("[+\\-*/]")) {
+        else if (input.matches("[+\\-*/^]")) {
 
             if (!op1.isEmpty() && op2.isEmpty()) {                
                 operador = input; 
@@ -49,7 +49,17 @@ public class CalculadoraController {
             }
             actualizarPantalla(pantalla);
         } 
-      
+        else if (input.equals("√") || input.equals("%")) {
+            if (operador.isEmpty() && !op1.isEmpty()) {
+                
+                op1 = evaluarUnario(op1, input);
+            } else if (!operador.isEmpty() && !op2.isEmpty()) {
+               
+                op2 = evaluarUnario(op2, input);
+            }
+            actualizarPantalla(pantalla);
+            calculoTerminado = true;
+        } 
 
        
         
@@ -109,6 +119,27 @@ public class CalculadoraController {
     }
 
 
+    private String evaluarUnario(String num, String op) {
+        try {
+            double d = Double.parseDouble(num);
+            double resultado = 0;
+
+            switch (op) {
+                case "√":
+                    if (d < 0) {
+                        return "Error"; 
+                    }
+                    resultado = Math.sqrt(d);
+                    break;
+                case "%":
+                    resultado = d / 100.0;
+                    break;
+            }
+            return formatearSalida(resultado);
+        } catch (Exception e) {
+            return "Error";
+        }
+    }
 
     
     private String formatearSalida(double valor) {
