@@ -15,6 +15,7 @@ org.emiliopinzon
 -Estilo de boton personalizado: radius, tipo de letra, size
 
 ##Enlace de video
+
 -(sugeridos) OBS - grabar - microfono 
 -presente su calculadora funcionando: operaciones, operaciones extra
 -presente la estructura de su codigo.
