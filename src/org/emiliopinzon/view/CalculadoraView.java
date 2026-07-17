@@ -12,13 +12,13 @@ import javafx.scene.text.FontWeight;
 import org.emiliopinzon.controller.CalculadoraController;
 
 public class CalculadoraView {
-
+// creacion de la interfaz
     private VBox raiz;
     private Label pantalla;
     GridPane cuadriculaBotones = new GridPane();
-
+//invoacion de el 
     private CalculadoraController controller;
-
+//crear botones 
     public CalculadoraView() {
         controller = new CalculadoraController();
 
@@ -27,14 +27,11 @@ public class CalculadoraView {
         raiz.setPadding(new Insets(20));
         raiz.setAlignment(Pos.CENTER);
         raiz.setStyle("-fx-background-color: #00FFBB;"); 
-
-       
         pantalla = new Label("0");
         pantalla.setFont(Font.font("Consolas", FontWeight.BOLD, 40));
         pantalla.setAlignment(Pos.CENTER_RIGHT);
         pantalla.setPrefSize(250, 70);
-        
-        pantalla.setStyle("-fx-background-color: #004734; -fx-text-fill: #2C3518; -fx-padding: 10px; -fx-background-radius: 5px;");
+        pantalla.setStyle("-fx-background-color: #FFFFFF; -fx-text-fill: #2C3518; -fx-padding: 10px; -fx-background-radius: 5px;");
 
        
         cuadriculaBotones.setHgap(10);
@@ -42,14 +39,7 @@ public class CalculadoraView {
         cuadriculaBotones.setAlignment(Pos.CENTER);
 
        
-        Button btnRaiz = nuevoBoton("√");
-        Button btnPot = nuevoBoton("^");
-        Button btnPorc = nuevoBoton("%");
         Button btnDiv = nuevoBoton("/");
-
-        cuadriculaBotones.add(btnRaiz, 0, 0);
-        cuadriculaBotones.add(btnPot, 1, 0);
-        cuadriculaBotones.add(btnPorc, 2, 0);
         cuadriculaBotones.add(btnDiv, 3, 0);
 
       
@@ -102,7 +92,7 @@ public class CalculadoraView {
         raiz.getChildren().addAll(pantalla, cuadriculaBotones);
     }
 
-   
+   //colocarles tipografias y colores
     public VBox getView() {
         return raiz;
     }
@@ -112,7 +102,7 @@ public class CalculadoraView {
 
        
         btn.setPrefSize(50, 50);
-        btn.setFont(Font.font("Arial", FontWeight.BOLD, 20));
+        btn.setFont(Font.font("Arial Black", FontWeight.BOLD, 20));
 
        
         if (text.matches("[0-9]")) {
