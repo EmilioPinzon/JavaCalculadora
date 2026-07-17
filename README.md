@@ -1,4 +1,4 @@
-# poryecto de hoja de tabajo 1 sobre elementos basico de Javafx
+# proyecto de hoja de tabajo 1 sobre elementos basico de Javafx
 calculadora con funciones basicas y raíz y porcentajes.
 
 ##Estructura
